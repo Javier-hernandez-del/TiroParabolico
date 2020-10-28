@@ -5,6 +5,7 @@ from freegames import vector
 ball = vector(-200, -200)
 speed = vector(0, 0)
 targets = []
+# Parámetro realizado para escoger la velocidad en la que el juego estará corriendo.
 velocity = float(input("Enter the speed of the balls if 1 is the normal speed: "))
 
 def tap(x, y):
@@ -40,6 +41,8 @@ def move():
         target = vector(200, y)
         targets.append(target)
 
+# Fors multiplicados por el parámetro de velocidad escogido por el usuario
+# para hacerlo más rápido.
     for target in targets:
         target.x -= 0.5 * velocity
 
@@ -58,6 +61,7 @@ def move():
 
     for target in targets:
         if not inside(target):
+            # Nuevo target que continua con la velocidad.
             targets[targets.index(target)].x = 200
 
     ontimer(move, 50)
