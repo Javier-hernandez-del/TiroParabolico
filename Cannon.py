@@ -8,7 +8,7 @@ targets = []
 # Parámetro realizado para escoger la velocidad en la que el juego estará corriendo.
 velocity = float(input("Enter the speed of the balls if 1 is the normal speed: "))
 
-def tap(x, y):
+def tap(x, y):  # Función que permite a la bola responder al toque de la pantalla.
     "Respond to screen tap."
     if not inside(ball):
         ball.x = -199
@@ -16,11 +16,11 @@ def tap(x, y):
         speed.x = (x * velocity + 200) / 25
         speed.y = (y * velocity + 200) / 25
 
-def inside(xy):
+def inside(xy):  # Función que evita que la bola y obtáculos se salgan de la pantalla.
     "Return True if xy within screen."
     return -200 < xy.x < 200 and -200 < xy.y < 200
 
-def draw():
+def draw():  # Función que dibuja la bola y los obstáculos.
     "Draw ball and targets."
     clear()
 
@@ -34,15 +34,14 @@ def draw():
 
     update()
 
-def move():
+def move():  # Función que mueve la bola y los obstáculos dependiendo del tiempo escogido.
     "Move ball and targets."
     if randrange(40) == 0:
         y = randrange(-150, 150)
         target = vector(200, y)
         targets.append(target)
 
-# Fors multiplicados por el parámetro de velocidad escogido por el usuario
-# para hacerlo más rápido.
+# Fors multiplicados por el parámetro de velocidad escogido por el usuario para hacerlo más rápido.
     for target in targets:
         target.x -= 0.5 * velocity
 
