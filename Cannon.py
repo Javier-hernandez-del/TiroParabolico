@@ -5,7 +5,7 @@ from freegames import vector
 ball = vector(-200, -200)
 speed = vector(0, 0)
 targets = []
-# Parámetro realizado para escoger la velocidad en la que el juego estará corriendo.
+# input realizado para escoger la velocidad en la que el juego estará corriendo.
 velocity = float(input("Enter the speed of the balls if 1 is the normal speed: "))
 
 def tap(x, y):  # Función que permite a la bola responder al toque de la pantalla.
@@ -65,6 +65,7 @@ def move():  # Función que mueve la bola y los obstáculos dependiendo del tiem
 
     ontimer(move, 50)
 
+# Parámetros del juego.
 setup(420, 420, 370, 0)
 hideturtle()
 up()
